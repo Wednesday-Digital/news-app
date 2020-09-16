@@ -4,4 +4,11 @@ const InvalidApplicationInputError = new RError('Invalid Application Input Error
 const InvalidDomainInputError = new RError('Invalid Domain Input Error', 601, 400);
 const InvalidRepositoryInputError = new RError('Invalid Repository Input Error', 601, 400);
 
-export { InvalidApplicationInputError, InvalidDomainInputError, InvalidRepositoryInputError };
+const InvalidGuardianServiceInputError = new RError('Invalid Guardian Service Input Error', 604);
+
+export {
+  InvalidApplicationInputError,
+  InvalidDomainInputError,
+  InvalidRepositoryInputError,
+  InvalidGuardianServiceInputError,
+};

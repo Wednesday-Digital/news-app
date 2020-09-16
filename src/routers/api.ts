@@ -7,6 +7,7 @@ import {
 } from 'express';
 
 import { getOneDomainModel } from '../modules/handler/api/domain';
+import { getManyNews } from '../modules/handler/api/news';
 
 const router = expressRouter();
 
@@ -18,5 +19,6 @@ router.get(
 );
 
 router.get('/api/v1/domain/:id', getOneDomainModel);
+router.get('/api/v1/news', getManyNews);
 
 export default router;

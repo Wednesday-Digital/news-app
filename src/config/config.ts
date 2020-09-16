@@ -21,6 +21,8 @@ dotEnvConfig({ path: path });
 
 const config: Config = {
   apiPort: parseInt(process.env.API_PORT) || 9000,
+  guardianAPIURL: process.env.GUARDIAN_API_URL || 'https://content.guardianapis.com',
+  guardianAPIKey: process.env.GUARDIAN_API_KEY || '68e59b6f-6441-4fb2-8618-6004e0c850e8',
 };
 
 export default config;

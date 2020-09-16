@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { isEmpty } from 'lodash';
+import { groupBy, isEmpty } from 'lodash';
 
 import config from '../../../config/config';
 import { InvalidGuardianServiceInputError } from '../../common/errors';
@@ -50,6 +50,10 @@ class GuardianNewsService implements NewsService {
           sectionName: newsItem.sectionName,
         } as News;
       });
+
+      // todo:
+      const groupedByCleanedNews = groupBy(cleanedNews, (newsItem) => newsItem.sectionId);
+      console.log('cleanedNews', groupedByCleanedNews);
 
       output.data = cleanedNews;
     } catch (error) {

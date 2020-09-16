@@ -24,6 +24,7 @@ const getManyNews: expressRequestHandler = async function getManyNews(
 ) {
   try {
     const query = request?.query?.query as string;
+    const sectionId = request?.query?.sectionId as string;
     // console.log('query', query);
 
     const news: Output<News[]> = await newsService.getManyNews(query);

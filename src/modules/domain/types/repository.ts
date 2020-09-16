@@ -1,4 +1,4 @@
-import { DomainModel } from './news';
+import { DomainModel } from './domain-model';
 import { Output } from '../../common/types/output';
 
 interface DomainRepository {

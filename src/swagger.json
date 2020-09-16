@@ -19,7 +19,7 @@
       "get": {
         "tags": ["news"],
         "description": "Returned a set of news",
-        "operationId": "getOneDomainModel",
+        "operationId": "getManyNews",
         "produces": ["application/json"],
         "parameters": [
           {

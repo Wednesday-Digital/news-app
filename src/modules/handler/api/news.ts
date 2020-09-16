@@ -30,7 +30,7 @@ const getManyNews: expressRequestHandler = async function getManyNews(
     const news: Output<News[]> = await newsService.getManyNews(query);
     response.send(news);
   } catch (error) {
-    console.log('Failed geting many news');
+    console.log('Failed getting many news');
     if (error instanceof RError === false) {
       error = new RError(error.message);
     }

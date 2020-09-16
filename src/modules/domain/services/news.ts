@@ -1,8 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { groupBy, isEmpty } from 'lodash';
+import { groupBy } from 'lodash';
 
-import config from '../../../config/config';
-import { InvalidGuardianServiceInputError } from '../../common/errors';
 import { RError } from '../../common/types/error';
 import { Output } from '../../common/types/output';
 import { News } from '../types/news';
@@ -51,7 +49,8 @@ class GuardianNewsService implements NewsService {
         } as News;
       });
 
-      // todo:
+      // Group By Section
+      // TODO: Update News Output to return proper news item
       const groupedByCleanedNews = groupBy(cleanedNews, (newsItem) => newsItem.sectionId);
       console.log('cleanedNews', groupedByCleanedNews);
 

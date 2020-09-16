@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "API Documentation for News App",
+    "version": "0.0.1",
+    "title": "Swagger for News App",
+    "contact": { "email": "raymond_squared@live.com" }
+  },
+  "servers": [],
+  "tags": [
+    {
+      "name": "news",
+      "description": "News related description"
+    }
+  ],
+  "schemes": ["https"],
+  "paths": {
+    "/api/v1/news": {
+      "get": {
+        "tags": ["news"],
+        "description": "Returned a set of news",
+        "operationId": "getOneDomainModel",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "your search query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful get operation",
+            "schema": {
+              "type": "object",
+              "items": { "$ref": "#/components/schemas/Output" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "News": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "webTitle": {
+            "type": "string"
+          },
+          "webUrl": {
+            "type": "string"
+          },
+          "webPublicationDate": {
+            "type": "string"
+          },
+          "sectionId": {
+            "type": "string"
+          },
+          "sectionName": {
+            "type": "string"
+          }
+        }
+      },
+      "RError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "httpStatusCode": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/News"
+            }
+          },
+          "error": {
+            "$ref": "#/components/schemas/RError"
+          }
+        }
+      }
+    }
+  }
+}

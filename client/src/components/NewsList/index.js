@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     },
   });
 
-function NewsForm({news}) {
+function NewsForm({news, saveNotes}) {
     const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -34,7 +34,7 @@ function NewsForm({news}) {
       <Typography component="p">
         {news.webPublicationDate}
       </Typography>
-        <input type='checkbox'/>
+        <input type='checkbox' onChange={(event)=>saveNotes(news)}/>
     </CardContent>
     <CardActions>
       <Button size="small"><a href={news.webUrl}>Learn More</a></Button>

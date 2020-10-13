@@ -12,15 +12,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function NewsForm({news}) {
+function NewsListItems({news, saveNotes}) {
   const classes = useStyles()
   return (
     <List className={classes.root}>
       {news&&news.map((item)=>{
-        return <NewsList key={item.id} news={item}/>;
+        return <NewsList key={item.id} news={item} saveNotes={saveNotes}/>;
       })}
     </List>
   );
 }
 
-export default NewsForm;
+export default NewsListItems;

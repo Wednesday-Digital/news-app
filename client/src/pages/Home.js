@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import NewsForm from "../components/NewsForm";
 import NewsListItems from "../components/NewsListItems"
+import PinnedNews from "../components/PinnedNews"
 import API from '../utils/API';
 
 function Home() {
@@ -11,8 +12,8 @@ function Home() {
 
     useEffect(()=>{
     //    getData()
-        console.log(news)
-    },[news])
+        console.log(pinnedNews)
+    },[pinnedNews])
 
     const getData = async ()=>{
         try{
@@ -24,6 +25,10 @@ function Home() {
             setError(err.message)
         }
     }
+
+    const saveNotes = (news)=>{
+        setPinnedNews([...pinnedNews, news])
+    }
   return (
       <>
       {error&&<h1>{error}</h1>}
@@ -34,7 +39,10 @@ function Home() {
         />
         <NewsListItems
             news={news}
-            setNews={setNews}
+            saveNotes={saveNotes}
+        />
+        <PinnedNews
+            pinnedNews={pinnedNews}
         />
     </>
   );

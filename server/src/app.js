@@ -1,0 +1,21 @@
+const express = require("express");
+var cors = require('cors');
+
+const routes = require("./routes");
+const app = express();
+app.use(cors());
+const PORT = process.env.PORT || 3001;
+
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// app.use(express.static("client/build"));
+
+// Add routes, both API and view
+app.use(routes);
+
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});

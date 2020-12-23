@@ -1,0 +1,31 @@
+body {
+    padding: 1.5em;
+}
+
+.bookmark {
+    margin-right: 1em;
+}
+
+.main-content {
+    min-height: 800px;
+}
+
+.news-error {
+    list-style: none;
+    color: darkred;
+}
+
+.news-item {
+    list-style: none;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.news-item a {
+    color: cadetblue;
+}
+
+.section-header {
+    list-style: none;
+    font-weight: bold;
+}
